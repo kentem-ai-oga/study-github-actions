@@ -1,0 +1,25 @@
+# ワークフローの名称
+name: hello-world
+
+# ワークフローの実行条件
+on:
+  # 手動実行の場合は、workflow_dispatch
+  workflow_dispatch:
+
+# 各ジョブの定義
+jobs:
+  # ジョブの名称
+  hello-world:
+    # 実行するOS
+    runs-on: ubuntu-latest
+    # タイムアウト時間
+    timeout-minutes: 10
+
+    # 各ステップの定義
+    steps:
+      # ステップの名称（省略可能）
+      - name: echo hello world
+        # runで、任意のコマンドを実行できる
+        # 実行可能なコマンドはOSに依存する
+        # 短すぎる場合、課金対象にされない場合があるため、sleepコマンドで遅延させる
+        run: sleep 60; echo hello world !!!

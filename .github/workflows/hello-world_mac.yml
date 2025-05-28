@@ -1,0 +1,14 @@
+name: hello-world_mac
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    # ここをmacosにする
+    runs-on: macos-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: echo hello world
+        run: sleep 60; echo hello world !!!
